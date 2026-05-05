@@ -3,8 +3,8 @@ Reward Model Inference (LoRA)
 对 merged_all_models_relative.csv 中的所有图片打分，输出三个维度的分数。
 
 Usage:
-  CUDA_VISIBLE_DEVICES=0 python infer_reward_v4.py
-  CUDA_VISIBLE_DEVICES=0 python infer_reward_v4.py --ckpt /path/to/epoch_dir --batch_size 16
+  CUDA_VISIBLE_DEVICES=0 python infer.py
+  CUDA_VISIBLE_DEVICES=0 python infer.py --ckpt /path/to/epoch_dir --batch_size 16
 """
 
 import argparse
