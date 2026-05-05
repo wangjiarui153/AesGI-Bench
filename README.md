@@ -182,13 +182,5 @@ If `output_csv` already exists, rows whose `index` appears in the file are skipp
 
 ---
 
-## 7. License & citation
 
-Use the license files attached to [anon-research/AesGI-Bench](https://huggingface.co/datasets/anon-research/AesGI-Bench) and [anon-research/AesGI-Assessor](https://huggingface.co/anon-research/AesGI-Assessor) on Hugging Face. If you publish work using this benchmark or checkpoint, cite those dataset/model cards as indicated there.
-
----
-
-## 中文摘要
-
-- **数据**：[AesGI-Bench](https://huggingface.co/datasets/anon-research/AesGI-Bench) 用 `huggingface-cli download ... --repo-type dataset` 或 `snapshot_download(..., repo_type="dataset")` 拉到本地，保证 `IMG_BASE`（默认 `AesGI-Bench`）下的相对路径与 `clear1.jsonl`、`merged_all_models_relative.csv` 一致。  
 - **权重**：[AesGI-Assessor](https://huggingface.co/anon-research/AesGI-Assessor) 需包含 `lora_adapter/` 与 `score_heads.pt`；训练前在 `train.py` 里配置好 **`SCORE_HEADS_CKPT`**；推理用 **`infer.py --ckpt`** 指向该目录。
