@@ -1,16 +1,15 @@
 """
-Aesthetic Reward Model v4 — LLM-only LoRA fine-tuning
-基于 v2 epoch5 权重，仅对 LLM 施加 LoRA（vision encoder 完全冻结）。
+Aesthetic Model — LLM-only LoRA fine-tuning
 
 Architecture:
   - Qwen3.5-9B VLM: 仅 LLM 加 LoRA，vision encoder 完全冻结
   - LoRA target: LLM q/k/v/o_proj
-  - score_heads: 3-head MLP（从 epoch5 checkpoint 加载）
+  - score_heads: 3-head MLP
   - 梯度流经 LLM LoRA 层 → score_heads
 
 Usage:
-  CUDA_VISIBLE_DEVICES=4 python train_reward_v4_lora.py
-  CUDA_VISIBLE_DEVICES=4 python train_reward_v4_lora.py --resume_lora /path/to/lora_ckpt --start_epoch 3
+  CUDA_VISIBLE_DEVICES=4 python train.py
+  CUDA_VISIBLE_DEVICES=4 python train.py --resume_lora /path/to/lora_ckpt --start_epoch 3
 """
 
 import argparse
