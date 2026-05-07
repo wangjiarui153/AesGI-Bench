@@ -14,11 +14,8 @@ Three-dimensional **aesthetic evaluation** model (visual aesthetic, detail quali
 
 ## Requirements
 
-- Python 3.10+ recommended  
-- GPU with enough VRAM for Qwen3.5-9B + LoRA (training defaults target ~70 GB class; lower `BATCH_SIZE` if needed)  
-- PyTorch, `transformers`, `peft`, `accelerate`, `pandas`, `scipy`, `Pillow`, `huggingface_hub`  
-- Base VLM: `Qwen/Qwen3.5-9B` (from Hugging Face; set `MODEL_PATH` in the scripts if you use a local mirror)
-
+```bash
+pip install -r requirements.txt
 ---
 
 ## 1. Download model weights (`AesGI-Assessor`)
@@ -62,7 +59,7 @@ CUDA_VISIBLE_DEVICES=0 python infer.py --ckpt ./weights/AesGI-Assessor
 
 ## 2. Download dataset (`AesGI-Bench`)
 
-The dataset is published as [anon-research/AesGI-Bench](https://huggingface.co/datasets/anon-research/AesGI-Bench) (image–text data; HF may expose **Parquet / WebDataset / archives** — see the dataset **Files** tab for the exact layout).
+The dataset is published as [anon-research/AesGI-Bench](https://huggingface.co/datasets/anon-research/AesGI-Bench) 
 
 ### Option A: Hugging Face CLI
 
@@ -181,6 +178,3 @@ CUDA_VISIBLE_DEVICES=0 python infer.py \
 If `output_csv` already exists, rows whose `index` appears in the file are skipped (resume). After a full run, the script prints **per-dimension SRCC** vs. `model_winrates_v2.csv` (model-level means).
 
 ---
-
-
-- **权重**：[AesGI-Assessor](https://huggingface.co/anon-research/AesGI-Assessor) 需包含 `lora_adapter/` 与 `score_heads.pt`；训练前在 `train.py` 里配置好 **`SCORE_HEADS_CKPT`**；推理用 **`infer.py --ckpt`** 指向该目录。
