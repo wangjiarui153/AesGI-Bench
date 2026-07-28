@@ -317,11 +317,11 @@ def train(args):
 
     # GT winrates
     gt_df = pd.read_csv(WINRATE_CSV)
-    gt_winrate = {row["模型"]: row["总胜率"] for _, row in gt_df.iterrows()}
+    gt_winrate = {row["Model"]: row["Win_Rate"] for _, row in gt_df.iterrows()}
     gt_dim_winrate = {
-        "visual_aesthetic": {row["模型"]: row["视觉美感_分数"] / 100 for _, row in gt_df.iterrows()},
-        "detail_quality":   {row["模型"]: row["细节质感_分数"]  / 100 for _, row in gt_df.iterrows()},
-        "style_relevance":  {row["模型"]: row["风格契合度_分数"] / 100 for _, row in gt_df.iterrows()},
+        "visual_aesthetic": {row["Model"]: row["Aesthetics_Score"] / 100 for _, row in gt_df.iterrows()},
+        "detail_quality":   {row["Model"]: row["Technical_Score"]  / 100 for _, row in gt_df.iterrows()},
+        "style_relevance":  {row["Model"]: row["Alignment_Score"] / 100 for _, row in gt_df.iterrows()},
     }
 
     log_mode = "a" if (args.resume_lora or args.resume_heads) else "w"
