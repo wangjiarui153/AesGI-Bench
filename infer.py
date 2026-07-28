@@ -156,9 +156,9 @@ def compute_srcc(results, winrate_csv):
 
     gt_df = pd.read_csv(winrate_csv)
     gt_dim = {
-        "visual_aesthetic": {row["模型"]: row["视觉美感_分数"] / 100 for _, row in gt_df.iterrows()},
-        "detail_quality": {row["模型"]: row["细节质感_分数"] / 100 for _, row in gt_df.iterrows()},
-        "style_relevance": {row["模型"]: row["风格契合度_分数"] / 100 for _, row in gt_df.iterrows()},
+        "visual_aesthetic": {row["Model"]: row["Aesthetics_Score"] / 100 for _, row in gt_df.iterrows()},
+        "detail_quality": {row["Model"]: row["Technical_Score"] / 100 for _, row in gt_df.iterrows()},
+        "style_relevance": {row["Model"]: row["Alignment_Score"] / 100 for _, row in gt_df.iterrows()},
     }
 
     model_scores = defaultdict(list)
