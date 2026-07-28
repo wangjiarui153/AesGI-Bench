@@ -1,4 +1,4 @@
-总排名,模型,总胜场,总平场,总场数,总胜率,总分数,视觉美感_分数,细节质感_分数,风格契合度_分数
+Rank,Model,Wins,Ties,Total_Pairs,Win_Rate,Overall_Score,Aesthetics_Score,Technical_Score,Alignment_Score
 1,Seedream4.0,9226,2155,12750,0.8081,80.8,82.1,79.3,81.1
 2,Seedream3.1,8388,2335,12750,0.7495,74.9,76.6,73.4,74.9
 3,kling-v2-1,7847,2344,12750,0.7074,70.7,71.6,69.2,71.4
